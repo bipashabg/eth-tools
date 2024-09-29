@@ -274,6 +274,12 @@ dependencies = [
 ]
 
 [[package]]
+name = "anyhow"
+version = "1.0.89"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "86fdf8605db99b54d3cd748a44c6d04df638eb5dafb219b135d0149bd0db01f6"
+
+[[package]]
 name = "arrayvec"
 version = "0.7.4"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -333,12 +339,23 @@ version = "0.1.0"
 dependencies = [
  "actix-cors",
  "actix-web",
+ "anyhow",
+ "ethabi",
+ "ethereum-types",
  "ethers",
+ "futures",
  "hex",
+ "lazy_static",
+ "num-bigint",
+ "num-traits",
  "regex",
  "reqwest",
+ "rlp",
+ "secp256k1",
  "serde",
  "serde_json",
+ "sha3",
+ "tiny-keccak",
  "tokio",
 ]
 
@@ -2933,6 +2950,24 @@ dependencies = [
  "pkcs8",
  "subtle",
  "zeroize",
+]
+
+[[package]]
+name = "secp256k1"
+version = "0.27.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "25996b82292a7a57ed3508f052cfff8640d38d32018784acd714758b43da9c8f"
+dependencies = [
+ "secp256k1-sys",
+]
+
+[[package]]
+name = "secp256k1-sys"
+version = "0.8.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "70a129b9e9efbfb223753b9163c4ab3b13cff7fd9c7f010fbac25ab4099fa07e"
+dependencies = [
+ "cc",
 ]
 
 [[package]]
