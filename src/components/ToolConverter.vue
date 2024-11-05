@@ -3,7 +3,7 @@
       <h2>{{ title }}</h2>
   
       <div v-if="title === 'ABI Encoder/Decoder'" class="abi-tool">
-        <v-card class="mb-5">
+        <v-card class="mb-5" app color = "#191825">
           <v-card-title>Encoder</v-card-title>
           <v-card-text>
             <v-textarea
@@ -12,7 +12,7 @@
               placeholder="e.g., ['address', 'uint256']"
               rows="4"
             ></v-textarea>
-            <v-btn @click="encodeInput" color="primary" class="mt-3">Encode</v-btn>
+            <v-btn @click="encodeInput" color="#865DFF" class="mt-3">Encode</v-btn>
             <v-textarea
               label="Encoded Output"
               v-model="encoderOutput"
@@ -105,5 +105,9 @@
     flex-direction: column;
     gap: 20px;
   }
+    .v-btn{
+      background-color: #865DFF;
+    }
+  
   </style>
   
