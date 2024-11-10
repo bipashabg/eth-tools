@@ -1,7 +1,7 @@
 <template>
     <div>
       <h2>{{ title }}</h2>
-  
+
       <div v-if="title === 'ABI Encoder/Decoder'" class="abi-tool">
         <v-card class="mb-5" app color = "#191825">
           <v-card-title>Encoder</v-card-title>
@@ -22,7 +22,7 @@
             ></v-textarea>
           </v-card-text>
         </v-card>
-  
+
         <v-card>
           <v-card-title>Decoder</v-card-title>
           <v-card-text>
@@ -43,7 +43,7 @@
           </v-card-text>
         </v-card>
       </div>
-  
+
       <div v-else>
 
         <v-select
@@ -64,7 +64,7 @@
       </div>
     </div>
   </template>
-  
+
   <script>
   export default {
     props: {
@@ -98,7 +98,7 @@
     }
   };
   </script>
-  
+
   <style scoped>
   .abi-tool {
     display: flex;
@@ -108,6 +108,5 @@
     .v-btn{
       background-color: #865DFF;
     }
-  
+
   </style>
-  

@@ -40,19 +40,27 @@
 import AbiConverter from "@/components/AbiConverter.vue";
 import HexDecimalConverter from "@/components/HexDecimalConverter.vue";
 import ToolConverter from "@/components/ToolConverter.vue";
-
+import UnitConverter from "@/components/UnitConverter.vue";
+import BlockConverter from "@/components/BlockConverter.vue";
+import StringConverter from "@/components/StringConverter.vue";
+import AbiDecoder from "@/components/AbiDecoder.vue";
 export default {
   name: "App",
   components: {
     AbiConverter,
     HexDecimalConverter,
-    ToolConverter
+    ToolConverter,
+    UnitConverter,
+    BlockConverter,
+    StringConverter,
+    AbiDecoder
   },
   data() {
     return {
       selectedTool: "abi",
       tools: [
         { title: "ABI Encoder", value: "abi" },
+        { title: "ABI Decoder", value: "abi-dec" },
         { title: "Type Conversions", value: "type" },
         { title: "Transaction Decoder", value: "hash" },
         { title: "Unit Conversions", value: "unit" },
@@ -70,8 +78,16 @@ export default {
       switch (this.selectedTool) {
         case "abi":
           return "AbiConverter";
+        case "abi-dec":
+          return "AbiDecoder";
         case "type":
           return "HexDecimalConverter"; // Replace with Type Conversion logic in the future
+        case "unit":
+          return "UnitConverter";
+        case "block":
+          return "BlockConverter";
+        case "string":
+          return "StringConverter";
         default:
           return "ToolConverter";
       }
