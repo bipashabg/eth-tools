@@ -46,14 +46,9 @@
 
       <div v-else>
 
-        <v-select
-          :items="conversions"
-          label="Select Conversion Type"
-          v-model="selectedConversion"
-          class="mb-3"
-        ></v-select>
-        <v-textarea label="Input" v-model="inputValue" rows="4"></v-textarea>
-        <v-btn @click="convert" color="primary" class="mt-3">Convert</v-btn>
+        <v-textarea label="Enter Ethereum Tx Hash or Raw Tx Hex
+" v-model="inputValue" rows="4"></v-textarea>
+        <v-btn @click="convert" color="primary" class="mt-3">Decode</v-btn>
         <v-textarea
           label="Output"
           v-model="outputValue"

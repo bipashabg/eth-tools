@@ -1,9 +1,9 @@
 <template>
   <v-card class="pa-5">
-    <h3>Conversions Input</h3>
+    <h3>ETH Unit Converter</h3>
 
     <v-text-field
-      label="Wei 10⁻¹⁸"
+      label="Wei (10⁻¹⁸)"
       id="wei"
       placeholder="0"
       v-model="abiTypes"
@@ -11,7 +11,7 @@
     ></v-text-field>
 
     <v-text-field
-      label="Gwei 10⁻⁹"
+      label="Gwei (10⁻⁹)"
       id="gwei"
       placeholder="0"
       v-model="abiTypes"
@@ -20,8 +20,16 @@
 
 
     <v-text-field
-      label="Eth"
+      label="Ether"
       id="eth"
+      placeholder="0"
+      v-model="abiTypes"
+      outlined
+    ></v-text-field>
+
+    <v-text-field
+      label="USD"
+      id="usd"
       placeholder="0"
       v-model="abiTypes"
       outlined
