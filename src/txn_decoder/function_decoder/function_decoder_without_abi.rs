@@ -19,7 +19,7 @@ struct FunctionSignature {
 }
 
 pub async fn final_result_from_calldata(call_data: &str) -> (Result<(), Error>, Option<String>, Option<Vec<String>>) {
-    // Check if the call_data is empty or too short
+
     if call_data.is_empty() || call_data.len() < 10 {
         println!("Invalid calldata, nothing to decode.");
         return (Err(Error::msg("No valid function in calldata.")), None, None);

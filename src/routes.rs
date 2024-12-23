@@ -1,5 +1,11 @@
 use actix_web::web;
-use crate::handlers::{unit_converter, block_to_timestamp,abi_handler};
+use crate::handlers::{
+    unit_converter,
+    block_to_timestamp,
+    abi_handler,
+    abi_encoder,
+    string_converter
+};
 use crate::txn_decoder::finality_decode;
 
 pub fn config(cfg: &mut web::ServiceConfig) {
@@ -17,10 +23,18 @@ pub fn config(cfg: &mut web::ServiceConfig) {
     )
     .service(
         web::resource("/convert-solidity-to-abi")
-            .route(web::post().to(abi_handler::convert_solidity_to_abi)),
+            .route(web::post().to(abi_encoder::encode_abi))
     )
     .service(
         web::resource("/decode-transaction")
-            .route(web::post().to(finality_decode::decode)),
+            .route(web::post().to(finality_decode::decode))
+    )
+    .service(
+        web::resource("/encode-abi")
+            .route(web::post().to(abi_encoder::encode_abi))
+    )
+    .service(
+        web::resource("/convert-string")
+            .route(web::post().to(string_converter::convert_string))
     );
 }
